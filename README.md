@@ -10,16 +10,22 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() 
+{
+    
+    int a = 44; 
+    int b = 3;   
+    int result = a << b;
+    printf("The result of left shifting %d by %d is: %d\n", a, b, result);
+    return 0;
+}
+```
 
 ## OUTPUT
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/2d763551-adb6-4482-bf8d-432317fa6bf9)
 
 ## RESULT
 Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
@@ -47,9 +53,28 @@ Write a C Program to check whether the two numbers are equal or not using simple
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main() {
+    
+    int num1, num2;
+    scanf("%d%d", &num1,&num2);
+    if (num1 == num2) 
+    {
+        printf("Both numbers are equal.\n");
+    } 
+    else
+    {
+        printf("Both numbers are not equal.\n");
+    }
+    return 0;
+}
+```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/f5936b69-9407-4ac8-9e81-d2265fca3a90)
+
            
 ## RESULT
 
@@ -70,8 +95,24 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <ctype.h>  
+int main()
+{
+    char str[100];
+    fgets(str, sizeof(str), stdin);  
+    for (int i = 0; str[i] != '\0'; i++) 
+    {
+        str[i] = tolower(str[i]);
+    }
+    printf("The string in lowercase is: %s\n", str);
+    return 0;
+}
+```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/606855b7-7673-4d27-bb8c-ff7281204c54)
 
 
 
@@ -95,12 +136,37 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() 
+{
+    char str[100];
+    int i = 0, count = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  
+    if (str[0] != '\0') 
+    {  
+        do {
+            if (str[i] == ' ') 
+            {
+                count++;
+            }
+            i++;
+        } 
+        while (str[i] != '\0');
+    }
+    if (i > 1 && str[i-2] != ' ') 
+    {
+        count++;
+    }
+    printf("Total number of words: %d\n", count);
+    return 0;
+}
+```
 
 ## OUTPUT
-
-
-
-
+![image](https://github.com/user-attachments/assets/cf813713-e988-4a28-9274-da93df1d2f33)
 
 ## RESULT
 Thus the program to count the total number of words in a given string using do While loop has been executed successfully
@@ -129,10 +195,39 @@ Step 7: After the loop, check the value of flag:
 Step 8: End the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+int main() 
+{
+    char c1[100], c2[100];
+    int i = 0, flag = 0;
+    scanf("%[^\n]", c1);
+    scanf("%s", c2);
+    do 
+    {
+        if (c1[i] != c2[i]) 
+        {
+            flag = 1;
+            break; 
+        }
+        i++;
+    } 
+    while (c1[i] != '\0' || c2[i] != '\0'); 
+    if (flag == 0) 
+    {
+        printf("Strings are same.\n");
+    } 
+    else 
+    {
+        printf("Strings are not same.\n");
+    }
+    return 0;
+}
+```
 
 ## OUTPUT
- 
+![image](https://github.com/user-attachments/assets/a1ba43d6-2142-4afc-9104-9d0822a6c247)
+
 
 ## RESULT
 Thus the C Program to compare two strings without using strcmp() has been executed successfully.
